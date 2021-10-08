@@ -1,0 +1,21 @@
+<databaseChangeLog
+	xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
+	<!-- Create tables -->
+
+	<changeSet id="1" author="blu-dots"
+		failOnError="true" onValidationFail="HALT">
+		<preConditions onFail="MARK_RAN">
+			<not>
+				<tableExists tableName="LOGIN_" />
+			</not>
+		</preConditions>
+		<createTable tableName="LOGIN_">
+			<column name="LOGIN_ID_" type="BIGINT" />
+			<column name="LOGIN_EMAIL_" type="VARCHAR(100)" />
+			<column name="LOGIN_PASSWORD_" type="VARCHAR(100)" />
+			<column name="LOGIN_DATE_TIME_" type="DATETIME" />
+		</createTable>
+	</changeSet>
+</databaseChangeLog>
