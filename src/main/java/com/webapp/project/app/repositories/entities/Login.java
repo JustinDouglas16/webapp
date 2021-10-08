@@ -19,7 +19,7 @@ public class Login {
 	@TableGenerator(name = "table", table = "sequences_", pkColumnName = "PK_NAME", valueColumnName = "PK_VALUE", initialValue = 0, allocationSize = 1)
 	@GeneratedValue(generator = "table", strategy = GenerationType.TABLE)
 
-	@Column(name = "LOGIN_ID")
+	@Column(name = "LOGIN_ID_")
 	private Long id;
 	
 	@Column(name = "LOGIN_EMAIL_")
